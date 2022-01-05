@@ -1,6 +1,13 @@
 <searchbar bindinput="onSearchInput" bindclear="onSearchClear"></searchbar>
 <view class="list-box" wx:if="{{ list.length > 0 }}">
 	<view class="list-item" wx:for="{{ list }}" wx:key="_id">
+		<view class="list-item-box" wx:if="{{ item.name }}">
+			<view class="item-left">
+				<view class="item-title">名称：</view>
+				<view class="item-content">{{ item.name }}</view>
+			</view>
+			<view class="item-copy" data-data="{{ item.name }}" bindtap="onCopy">复制</view>
+		</view>
 		<view class="list-item-box" wx:if="{{ item.account }}">
 			<view class="item-left">
 				<view class="item-title">账号：</view>

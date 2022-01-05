@@ -8,6 +8,7 @@ const _ = db.command
 Page({
   data: {
     mode: 'add',
+    name: '',
     account: '',
     password: '',
     remark: '',
@@ -32,8 +33,8 @@ Page({
     if (length > 1) {
       const page = pages[length - 2]
       const item = page.data.list[index]
-      const { category, account, password, remark, cryptoType } = item
-      this.setData({ category, account, password, remark, cryptoType })
+      const { category, name, account, password, remark, cryptoType } = item
+      this.setData({ category, name, account, password, remark, cryptoType })
     }
   },
   encrypt(data) {
@@ -50,13 +51,14 @@ Page({
     this.data[type] = e.detail.value
   },
   updatePrePageData() {
-    const { account, password, remark, category, saveType, index } = this.data
+    const { name, account, password, remark, category, saveType, index } = this.data
     const pages = getCurrentPages()
     const length = pages.length
     if (length > 1) {
       const page = pages[length - 2]
       const { list } = page.data
       const item = list[index]
+      item.name = name
       item.account = account
       item.password = password
       item.remark = remark
@@ -66,8 +68,13 @@ Page({
     }
   },
   saveCloudAccount() {
-    const { account, password, remark, category, id } = this.data
+    const { name, account, password, remark, category, id } = this.data
     const cloudData = {}
+    if (name) {
+      cloudData.name = this.encrypt(name)
+    } else {
+      cloudData.name = _.remove()
+    }
     if (account) {
       cloudData.account = this.encrypt(account)
     } else {
@@ -101,10 +108,11 @@ Page({
   },
   // 本地保存
   saveLocalAccount() {
-    const { account, password, remark, category, id } = this.data
+    const { name, account, password, remark, category, id } = this.data
     const accounts = wx.getStorageSync('accounts') || []
     if (Array.isArray(accounts)) {
       const item = accounts.findItem(item => item.id === id)
+      item.name = name
       item.account = account
       item.password = password
       item.remark = remark
@@ -128,12 +136,12 @@ Page({
     this.setData({ cryptoType: this.data.cryptoRange[value] })
   },
   onButtonTap() {
-    const { account, password, remark, saveType } = this.data
+    const { name, account, password, remark, saveType } = this.data
     const { userInfo = {} } = app.globalData
     const { role } = userInfo
 
-    if (!account && !password && !remark) {
-      wx.showToast({ title: '请填写账号密码' })
+    if (!name || !account || !password) {
+      wx.showToast({ title: '请输入账户信息' })
       return
     }
     if ((role === 'member' || role === 'admin')  && saveType === '云端') { // 云存储

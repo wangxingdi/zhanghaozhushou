@@ -12,7 +12,7 @@ function getOpenId() {
 const isAdminRole = async () => {
   const openId = getOpenId()
   try {
-    const res = await db.collection('users')
+    const res = await db.collection('ecb_user')
       .where({ _openid: openId })
       .get()
     const { data } = res
@@ -43,7 +43,7 @@ const update = async (event) => {
       data.applyStatusUpdateAt = Date.now()
     }
 
-    const res = await db.collection('users')
+    const res = await db.collection('ecb_user')
       .doc(id)
       .update({
         data,
@@ -77,7 +77,7 @@ const get = async (event) => {
     if (role) {
       params.role = role
     }
-    const res = await db.collection('users')
+    const res = await db.collection('ecb_user')
       .where(params)
       .orderBy(orderKey, orderBy)
       .skip(offset)
@@ -107,7 +107,7 @@ const count = async event => {
     if (role) {
       params.role = role
     }
-    const res = await db.collection('users')
+    const res = await db.collection('ecb_user')
       .where(params)
       .count()
     const { total } = res

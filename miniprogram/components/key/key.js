@@ -172,8 +172,11 @@ Component({
     resetEncryptList(oldKey, newKey, list) {
       const res = []
       list.forEach(item => {
-        const { _id, account, password, remark, type } = item
+        const { _id, name, account, password, remark, type } = item
         const d = { id: _id }
+        if (name){
+          d.name = Crypto.encrypt(Crypto.decrypt(name, oldKey, type), newKey, type)
+        }
         if (account) {
           d.account = Crypto.encrypt(Crypto.decrypt(account, oldKey, type), newKey, type)
         }

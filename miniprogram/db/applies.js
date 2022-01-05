@@ -4,7 +4,7 @@ const $ = db.command.aggregate
 
 export const get = async (params, offset = 0, limit = 20) => {
   try {
-    const res = await db.collection('applies')
+    const res = await db.collection('ecb_apply')
       .where(params)
       .skip(offset)
       .limit(limit)
@@ -18,7 +18,7 @@ export const get = async (params, offset = 0, limit = 20) => {
 
 export const remove = async (id) => {
   try {
-    const res = db.collection('applies').doc(id).remove()
+    const res = db.collection('ecb_apply').doc(id).remove()
     const { removed } = res.stats
     return { code: 0, data: { removed }, message: '' }
   } catch(e) {

@@ -1,5 +1,11 @@
 <view class="wrapper">
   <cells>
+    <cell title="名称">
+      <input placeholder="请输入名称"
+       data-type="name"
+       value="{{ name }}"
+       bindinput="onInput"></input>
+    </cell>
     <cell title="账号">
       <input placeholder="请输入账号"
        data-type="account"

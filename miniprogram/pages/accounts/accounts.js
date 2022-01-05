@@ -65,7 +65,10 @@ Page({
     const { key } = app.globalData
     for(let i = 0; i < list.length; i++) {
       const item = list[i]
-      const { cryptoType, account, password, remark } = item
+      const { cryptoType, name, account, password, remark } = item
+      if (name) {
+        item.name = Crypto.decrypt(name, key, cryptoType)
+      }
       if (account) {
         item.account = Crypto.decrypt(account, key, cryptoType)
       }
@@ -125,10 +128,10 @@ Page({
     const { value } = e.detail
     const { searchList } = this.data
     const list = searchList.filter(item => {
-      const { account = '', password = '', remark = '' } = item
-      const flag =  account.indexOf(value) > -1
+      const { name ='', account = '', password = '' } = item
+      const flag =  name.indexOf(value) > -1
+       || account.indexOf(value) > -1
        || password.indexOf(value) > -1
-       || remark.indexOf(value) > -1
       return flag
     })
     this.setData({ list })

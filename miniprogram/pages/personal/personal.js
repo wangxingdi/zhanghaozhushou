@@ -164,7 +164,7 @@ Page({
   onIndependentDeployTap() {
     const { isAccountAssistant } = this.data
     if (isAccountAssistant) {
-      wx.showModal({
+/*      wx.showModal({
         title: '提示',
         content: '请添加专属技术支持微信：yynami',
         confirmText: '复制微信',
@@ -179,11 +179,17 @@ Page({
           }
         },
       })
+*/
+      wx.showModal({
+        title: '提示',
+        content: '功能优化中，请耐心等待',
+        confirmText: '关闭'
+      })
     } else {
-            const info = wx.getAccountInfoSync()
+      const info = wx.getAccountInfoSync()
       const { appId } = info.miniProgram
       wx.navigateToMiniProgram({
-        appId: 'wxac6c35ede13be318',
+        appId: 'wx91b33705face3bc5',
         path: '/pages/index/index',
         extraData: { appId, source: 'customerMiniProgram' }
       })
@@ -205,7 +211,7 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: '您的账号助手',
+      title: '您手中的小小密码本',
       path: '/pages/index/index',
       imageUrl: '/images/share.png',
     }

@@ -29,7 +29,7 @@
     "backgroundColor": "#f7f7f7",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f7f7f7",
-    "navigationBarTitleText": "账号助手",
+    "navigationBarTitleText": "小小密码本",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

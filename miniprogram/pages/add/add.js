@@ -7,6 +7,7 @@ const { bus } = app
 Page({
   data: {
     mode: 'add',
+    name: '',
     account: '',
     password: '',
     remark: '',
@@ -52,6 +53,7 @@ Page({
   },
   resetInput() {
     this.setData({
+      name: '',
       account: '',
       password: '',
       remark: '',
@@ -63,8 +65,11 @@ Page({
     this.data[type] = e.detail.value
   },
   saveCloudAccount() {
-    const { account, password, remark, category, cryptoType } = this.data
+    const { name, account, password, remark, category, cryptoType } = this.data
     const cloudData = {}
+    if(name) {
+      cloudData.name = this.encrypt(name)
+    }
     if (account) {
       cloudData.account = this.encrypt(account)
     }
@@ -91,12 +96,12 @@ Page({
       })
   },
   onAddButtonTap() {
-    const { account, password, remark, category, saveType } = this.data
+    const { name, account, password, remark, category, saveType } = this.data
     const { userInfo = {} } = app.globalData
     const { role } = userInfo
     bus.emit('add')
-    if (!account && !password && !remark) {
-      wx.showToast({ title: '至少填写一项' })
+    if (!name || !account || !password) {
+      wx.showToast({ title: '请输入账户信息' })
       return
     }
     if ((role === 'member' || role === 'admin')  && saveType === '云端') { // 云存储
@@ -104,7 +109,7 @@ Page({
     } else if (saveType === '本地') { // 本地存储
       const accounts = wx.getStorageSync('accounts') || []
       if (Array.isArray(accounts)) {
-        const data = { account, password, remark, category, id: Date.now() }
+        const data = { name, account, password, remark, category, id: Date.now() }
         accounts.unshift(data)
         wx.setStorage({
           data: accounts,

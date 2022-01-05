@@ -132,8 +132,11 @@ Page({
   resetEncryptList(oldKey, newKey, list) {
     const res = []
     list.forEach(item => {
-      const { _id, account, password, remark } = item
+      const { _id, name, account, password, remark } = item
       const d = { id: _id }
+      if (name) {
+        d.name = AES.encrypt(AES.decrypt(name, oldKey), newKey)
+      }
       if (account) {
         d.account = AES.encrypt(AES.decrypt(account, oldKey), newKey)
       }

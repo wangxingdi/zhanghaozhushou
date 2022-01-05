@@ -35,7 +35,8 @@ App({
   onLaunch(option) {
     this.$ready = this.appReady()
     this.handleOldVersionLocalAccounts()
-    this.globalData.isAccountAssistant = wx.getAccountInfoSync().miniProgram.appId === 'wxac6c35ede13be318'
+    this.globalData.isAccountAssistant = wx.getAccountInfoSync().miniProgram.appId === 'wx91b33705face3bc5'
+    console.log(this.globalData.isAccountAssistant)
   },
   async appReady() {
     return dbUsers.getByOpenId()

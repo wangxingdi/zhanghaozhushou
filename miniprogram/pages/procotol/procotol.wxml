@@ -1,7 +1,7 @@
 <view class="box pb-32">
   <view class="title">使用说明和协议</view>
   <view class="description">
-  <text class="bold">账号助手</text>是一个方便用户记录个人账号密码的效率工具，支持本地存储和云端存储。</view>
+  <text class="bold">小小密码本</text>是一个方便用户记录个人账号密码的效率工具，支持本地存储和云端存储。</view>
 
   <view class="description">云端存储可使用国密SM4或AES加密算法对数据进行加密，加密密钥为你设置的主密码。</view>
 

@@ -4,7 +4,7 @@ const _ = db.command
 // 只会获取一个
 const getByOpenId = async (params = {}) => {
   try {
-    const res = await db.collection('users').where(params).get()
+    const res = await db.collection('ecb_user').where(params).get()
     const { data } = res
     return { code: 0, data: data[0], message: '获取成功' }
   } catch(e) {
@@ -14,7 +14,7 @@ const getByOpenId = async (params = {}) => {
 // 获取用户列表
 const get = async (params = {}, offset = 0, limit = 20) => {
   try {
-    const res = await db.collection('users')
+    const res = await db.collection('ecb_user')
       .where(params)
       .skip(offset)
       .limit(limit)
@@ -28,7 +28,7 @@ const get = async (params = {}, offset = 0, limit = 20) => {
 
 const add = async (data) => {
   try {
-    const res = await db.collection('users').add({ data })
+    const res = await db.collection('ecb_user').add({ data })
     return { code: 0, data: { _id: res._id }, message: '新增用户成功' }
   } catch(e) {
     return { code: -1, message: '新增失败' }
@@ -37,7 +37,7 @@ const add = async (data) => {
 
 const update = async (id, data = {}) => {
   try {
-    const res = await db.collection('users')
+    const res = await db.collection('ecb_user')
       .doc(id)
       .update({
         data,

@@ -261,7 +261,7 @@ Page({
   },
   onShareAppMessage(e) {
     return {
-      title: '您的账号助手',
+      title: '您手中的小小密码本',
       path: '/pages/index/index',
       imageUrl: '/images/share.png',
     }

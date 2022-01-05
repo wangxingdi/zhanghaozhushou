@@ -1,128 +1,130 @@
 {
-  "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": "cloudfunctions/",
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
+    "miniprogramRoot": "miniprogram/",
+    "cloudfunctionRoot": "cloudfunctions/",
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": false,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "enableEngineNative": false,
+        "useIsolateContext": false,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "minifyWXML": true
     },
-    "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": []
-  },
-  "appid": "",
-  "projectname": "accounts",
-  "libVersion": "2.8.1",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": 0,
-      "list": [
-        {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+    "appid": "wx91b33705face3bc5",
+    "projectname": "ecb",
+    "libVersion": "2.8.1",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "condition": {
+        "search": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "添加",
-          "pathName": "pages/add/add",
-          "query": "",
-          "scene": null
+        "conversation": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "categories",
-          "pathName": "pages/categories/categories",
-          "query": "",
-          "scene": null
+        "plugin": {
+            "list": []
         },
-        {
-          "id": 3,
-          "name": "key",
-          "pathName": "pages/key/key",
-          "query": "mode=reset",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "id": 4,
-          "name": "accounts",
-          "pathName": "pages/accounts/accounts",
-          "query": "category=默认&saveType=云端",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "id": -1,
-          "name": "personal",
-          "pathName": "pages/personal/personal",
-          "query": "category=默认&saveType=云端",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "applyStatus",
-          "pathName": "pages/applyStatus/applyStatus",
-          "query": "mode=reset",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "applies",
-          "pathName": "pages/applies/applies",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "procotol",
-          "pathName": "pages/procotol/procotol",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "db guide",
+                    "pathName": "pages/databaseGuide/databaseGuide",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "添加",
+                    "pathName": "pages/add/add",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "categories",
+                    "pathName": "pages/categories/categories",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 3,
+                    "name": "key",
+                    "pathName": "pages/key/key",
+                    "query": "mode=reset",
+                    "scene": null
+                },
+                {
+                    "id": 4,
+                    "name": "accounts",
+                    "pathName": "pages/accounts/accounts",
+                    "query": "category=默认&saveType=云端",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "personal",
+                    "pathName": "pages/personal/personal",
+                    "query": "category=默认&saveType=云端",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "applyStatus",
+                    "pathName": "pages/applyStatus/applyStatus",
+                    "query": "mode=reset",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "applies",
+                    "pathName": "pages/applies/applies",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "procotol",
+                    "pathName": "pages/procotol/procotol",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }
