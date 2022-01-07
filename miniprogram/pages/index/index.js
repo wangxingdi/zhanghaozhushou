@@ -163,7 +163,7 @@ Page({
   },
   // 点击创建账号后的回调
   goToAddClondAccoutAfterKeyConfirm() {
-    app.globalData.saveType = '云端'
+    app.globalData.saveType = '本地'
     wx.switchTab({ url: '/pages/add/add' })
   },
   onSwitch(e) {

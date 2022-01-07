@@ -12,17 +12,17 @@ Page({
     password: '',
     remark: '',
     category: '默认',
-    saveRange: ['本地', '云端'],
+    saveRange: ['云端', '本地'],
     cryptoRange: ['SM4', 'AES'],
     cryptoType: 'SM4',
-    saveType: '本地',
+    saveType: '云端',
     showKeyDialog: false,
     selectionStart: 0,
     selectionEnd: 0,
     isFocused: false,
   },
   onLoad() {
-    const { saveType = '本地' } = app.globalData
+    const { saveType = '云端' } = app.globalData
     this.setData({ saveType: decodeURIComponent(saveType) })
     this.showPasswordTip()
   },
@@ -123,8 +123,7 @@ Page({
   },
   onSaveTypeChange(e) {
     const { value } = e.detail
-    console.log(e.detail)
-    if (value === '0') {
+    if (value === '1') {
       this.setData({ saveType: '本地' })
     } else {
       app.$ready.then(res => {
