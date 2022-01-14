@@ -1,4 +1,4 @@
-import tags from './tags'
+import tags from '../../config/tags'
 import { group} from '../../utils/array'
 
 const groupedList = group(tags.map(tag => Object.assign({}, tag)))
