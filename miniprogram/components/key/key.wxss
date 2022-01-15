@@ -42,3 +42,8 @@
 .message {
   color: var(--weui-FG-1);
 }
+.tips {
+  color: red;
+  padding-left: 16px;
+  margin-top: 10px;
+}

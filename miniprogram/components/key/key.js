@@ -142,7 +142,7 @@ Component({
         const { firstKey } = this.data
         wx.showModal({
           title: '重要提醒',
-          content: '主密码用于加解密数据，你必须牢记于心，忘记主密码后将无法恢复数据！',
+          content: '主密码用于加解密数据，您必须牢记于心，忘记主密码后您将失去所有数据！',
           success: ({ confirm }) => {
             if (confirm) {
               const hash = SHA256(firstKey)

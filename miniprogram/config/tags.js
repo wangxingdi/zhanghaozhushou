@@ -8,16 +8,16 @@ export default [
     icon: '/images/icon_web.png',
   },
   {
-    name: 'App',
-    icon: '/images/icon_app.png',
+    name: '软件',
+    icon: '/images/icon_software.png',
   },
   {
     name: '邮箱',
     icon: '/images/icon_mail.png',
   },
   {
-    name: '银行',
-    icon: '/images/icon_bank.png',
+    name: '金融',
+    icon: '/images/icon_finance.png',
   },
   {
     name: '政务',

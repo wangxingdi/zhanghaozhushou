@@ -48,5 +48,11 @@
          </view>
       </cell>
    </cells>
+   <view class="tips">
+      <text>友情提示：</text>
+   </view>
+   <view class="tips">
+      <text>主密码将用于登录和加密您的数据，请务必牢记</text>
+   </view>
   </view>
 </half-screen-dialog>
